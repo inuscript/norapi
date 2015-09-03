@@ -15,7 +15,7 @@ const initialState = generateState(0)
 export default function(state = initialState, action){
   switch(action.type){
     case types.SET_MEMBER:
-      return generateState(1)
+      return generateState(action.id)
     default:
       return state
   }
