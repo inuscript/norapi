@@ -1,6 +1,6 @@
-import { Component } from 'redux'
+import React,{ Component } from 'react'
 
-export default class Fetcher {
+export default class Fetcher extends Component{
   render(){
     return <div></div>
   }

@@ -2,6 +2,7 @@ import React, { Component, PropTypes} from "react"
 import { bindActionCreators } from 'redux';
 import * as Actions from '../actions/';
 import Token from "./Token.jsx"
+import Fetcher from "./Fetcher.jsx"
 
 export default class App extends Component{
   render(){

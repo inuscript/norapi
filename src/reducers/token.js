@@ -1,6 +1,6 @@
 import * as types from "../constants/ActionTypes"
 
-import tokenGenerator from "../lib/token"
+import tokenGenerator from "../services/token"
 import { Map } from 'immutable'
 
 const generateState = function(memberId){
