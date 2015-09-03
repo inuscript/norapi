@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Norapi from '../component/Norapi.jsx'
+import App from '../component/App.jsx'
 
 let mapStateToProps = function(state){
   return {
@@ -7,4 +7,4 @@ let mapStateToProps = function(state){
   }
 }
 
-export default connect(mapStateToProps)(Norapi)
+export default connect(mapStateToProps)(App)
