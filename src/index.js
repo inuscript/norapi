@@ -1,5 +1,5 @@
-import boot from "./boot.jsx"
+import bootApp from "./containers/boot.jsx"
 
 window.onload = function(){
-  boot(document.querySelector("body"))
+  bootApp(document.querySelector("body"))
 }

@@ -1,35 +1,16 @@
 import React, { Component, PropTypes} from "react"
-import { createStore } from 'redux';
-import tokenGenerator from "../lib/token"
+import { bindActionCreators } from 'redux';
+import * as Actions from '../actions/';
 
-function api(state, action){
-  state.memberId = action.memberId
-  return state
-}
-let store = createStore(api)
-
-export default class Norapi extends Component{
-  constructor(){
-    super()
-    this.state = {
-      memberId: 1
-    }
-  }
-  onChangeMember(e){
-    this.setState({
-      memberId : e.value
-    })
-  }
+export default class App extends Component{
   render(){
+    const { dispatch, token } = this.props
+    const actions = bindActionCreators(Actions, dispatch)
     return (
       <form className="api-application">
         <h1>API check tool</h1>
         <div>
-          <MemberInput
-            onChange={this.onChangeMember.bind(this)}
-            memberId={this.state.memberId}
-          />
-          <Token memberId={this.state.memberId} />
+          <Token token={token} actions={actions} />
         </div>
       </form>
     )
@@ -37,11 +18,20 @@ export default class Norapi extends Component{
 }
 
 class Token extends Component{
-  generateToken(memberId){
-    return tokenGenerator(memberId)
+  constructor(props){
+    super(props)
   }
   render(){
-    return <div className="token"> Authenticate: {this.generateToken(this.props.memberId)}</div>
+    const { token, actions } = this.props
+    return <div className="token"> 
+      <MemberInput
+        onChange={(e) => actions.setMember(e.currentTarget.value)}
+        memberId={token.memberId}
+      />
+      <div>
+        Authenticate: {token.authToken}
+      </div>
+    </div>
   }
 }
 
@@ -50,9 +40,10 @@ class MemberInput extends Component{
     return <div>
       <label>Member ID</label>
       <input 
-        onChange={this.props.onChange} 
+        onChange={this.props.onChange}
         value={this.props.memberId}
       />
     </div>
   }
 }
+
