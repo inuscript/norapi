@@ -1,2 +1,2 @@
-./src/services/token/*.sub
-./src/services/token/*.json
+src/services/token/*.sub
+src/services/token/*.json
