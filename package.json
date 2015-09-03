@@ -4,9 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "budo src/index.jsx:lib/index.js -v -d --live | garnish",
+    "start": "budo src/index.js:lib/index.js -v -d | garnish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.0.1",
+    "budo": "^4.2.1",
+    "garnish": "^2.3.0"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^5.0.5",
+    "react": "^0.13.3",
+    "react-redux": "^2.0.0",
+    "redux": "^2.0.0"
+  }
 }
