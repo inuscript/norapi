@@ -1,2 +1,2 @@
-src/services/token/*.sub
+src/services/token/*.pub
 src/services/token/*.json
