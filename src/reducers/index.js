@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import Immutable from 'immutable'
 import * as types from "../constants/ActionTypes"
 import tokenGenerator from "../lib/token"
 
@@ -17,6 +18,7 @@ const token = function(state = defaultValue, action){
   }
   return state
 }
+
 const reducer = combineReducers({
   token
 })

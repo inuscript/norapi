@@ -10,17 +10,21 @@
   "author": "",
   "browserify": {
     "transform": [
-      "babelify"
+      "babelify",
+      "brfs"
     ]
   },
   "license": "ISC",
   "devDependencies": {
     "babelify": "^6.3.0",
+    "brfs": "^1.4.1",
     "browserify": "^11.0.1",
     "budo": "^4.2.1",
     "garnish": "^2.3.0"
   },
   "dependencies": {
+    "fetch": "^0.3.6",
+    "immutable": "^3.7.5",
     "jsonwebtoken": "^5.0.5",
     "react": "^0.13.3",
     "react-redux": "^2.0.0",
