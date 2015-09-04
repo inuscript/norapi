@@ -20,7 +20,8 @@
     "brfs": "^1.4.1",
     "browserify": "^11.0.1",
     "budo": "^4.2.1",
-    "garnish": "^2.3.0"
+    "garnish": "^2.3.0",
+    "redux-devtools": "^2.1.0"
   },
   "dependencies": {
     "fetch": "^0.3.6",

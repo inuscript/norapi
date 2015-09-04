@@ -3,15 +3,15 @@ import React, { Component } from "react"
 export default class Token extends Component{
   render(){
     const { token, actions } = this.props
-    return <div className="token"> 
+    return <form className="token"> 
       <MemberInput
-        onChange={(e) => actions.setMember(e.currentTarget.value)}
+        onChange={(e) => actions.setMember(e.target.value)}
         memberId={token.memberId}
       />
       <div>
         Authenticate: {token.authToken}
       </div>
-    </div>
+    </form>
   }
 }
 

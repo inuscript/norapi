@@ -3,7 +3,8 @@ import App from '../component/App.jsx'
 
 let mapStateToProps = function(state){
   return {
-    token : state.token
+    token : state.token,
+    api : state.api
   }
 }
 

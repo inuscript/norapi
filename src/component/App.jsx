@@ -6,14 +6,14 @@ import Fetcher from "./Fetcher.jsx"
 
 export default class App extends Component{
   render(){
-    const { dispatch, token } = this.props
+    const { dispatch, token, api } = this.props
     const actions = bindActionCreators(Actions, dispatch)
     return (
-      <form className="api-application">
+      <div className="api-application">
         <h1>API check tool</h1>
         <Token token={token} actions={actions} />
-        <Fetcher actions={actions}/>
-      </form>
+        <Fetcher api={api} actions={actions}/>
+      </div>
     )
   }
 }
