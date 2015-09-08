@@ -1,11 +1,13 @@
 import React from "react"
-import { createStore } from "redux"
+import { createStore, applyMiddleware} from "redux"
 import { Provider }  from 'react-redux'
 
-import App from "./connectApp.jsx"
+import App from "./ConnectedApp.jsx"
 import reducers from '../reducers'
+import thunk from 'redux-thunk';
 
-let store = createStore(reducers)
+let createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+let store = createStoreWithMiddleware(reducers)
 
 export default function bootApp(container){
   React.render(

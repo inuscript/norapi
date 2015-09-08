@@ -7,13 +7,14 @@ export default class Fetcher extends Component{
     return <form>
       <div>
         <input type="url" value={api.baseUrl} />
-        <input value={api.path} onChange={(e) => { 
-          actions.apiUrlPath(e.value) 
-        }} />
+        <input value={api.path} onChange={ (e) => {
+          actions.apiUrlPath(e.target.value) 
+        } } />
       </div>
       <div>
-        <textarea onChange={(e) => {actions.apiBody(e.value)}} />
+        <textarea value={api.body} onChange={(e) => {actions.apiBody(e.target.value)}} />
       </div>
+      <button onClick={() => { actions.fetcBody() } }>Fetch API</button>
     </form>
   }
 }

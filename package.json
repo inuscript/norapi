@@ -29,6 +29,8 @@
     "jsonwebtoken": "^5.0.5",
     "react": "^0.13.3",
     "react-redux": "^2.0.0",
-    "redux": "^2.0.0"
+    "redux": "^2.0.0",
+    "redux-actions": "^0.8.0",
+    "redux-thunk": "^0.1.0"
   }
 }

@@ -1,12 +1,16 @@
 import * as types from "../constants/ActionTypes"
+import {createAction} from "redux-actions"
 
-export function setMember(id){
-  return { type : types.SET_MEMBER, id }
-}
+export let setMember = createAction(types.SET_MEMBER, id => id)
 
-export function apiUrlPath(path){
-  return {
-    type: types.API_URL,
-    path
-  }
+export let apiUrlPath = createAction(types.API, (path) => {
+  return { path }
+})
+
+export let apiBody = createAction(types.API, (body) => { 
+  return { body } 
+})
+
+export function fetchApi(){
+  return { type: types.API }
 }
